@@ -12,7 +12,7 @@ export default function Form() {
                 </div>
                 <div className="flex flex-col justify-center items-start my-[20px] max-w-[700px] mx-auto">
                   <label htmlFor="email">E-mail <span className="text-red">*</span></label>
-                  <input type="email" name="email" id="email" placeholder="E-mail" required className="w-full px-2 py-3" />
+                  <input type="email" name="email" id="email" placeholder="E-mail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" className="w-full px-2 py-3" />
                 </div>
                 <div className="flex flex-col justify-center items-start my-[20px] max-w-[700px] mx-auto">
                   <label htmlFor="message">Message <span className="text-red">*</span></label>

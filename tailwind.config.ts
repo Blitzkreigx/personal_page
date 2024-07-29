@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         "primary": "#E2E8DD",
         "secondary": "#111111",
-        "buttons": "#404E5C",
+        "buttons": "#725AC1",
         "opacity": "rgba(0,0,0,.7)",
         "red": "#ff0000",
       }
