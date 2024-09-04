@@ -2,18 +2,20 @@ import Form from "@/components/form";
 import NavBar from "@/components/navbar";
 import Service from "@/components/service";
 import Post from "@/components/post";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="lg:text-lg">
       <NavBar />
-      <div className="text-primary h-screen px-[75px] py-[100px] md:px-[100px]" id="acuell">
-        <div className="fixed w-full h-full top-0 left-0 -z-50">
+      <section className="text-primary h-screen px-[50px] py-[100px] md:px-[100px]" id="acuell">
+        <div className="fixed w-full h-full top-0 left-0 -z-50 bg-secondary">
           <video
             src="/main-background.mp4"
             muted
             loop
             autoPlay
+            playsInline
             className="object-cover w-full h-full"
           ></video>
           <div className="bg-opacity w-full h-full absolute top-0 left-0"></div>
@@ -23,8 +25,8 @@ export default function Home() {
           <p className="text-xl">Humaid transforme les entités sociales en leaders digitaux</p>
           <a href="#services" className="py-3 px-9 bg-buttons rounded-full hover:bg-primary hover:text-secondary">Découvir comment</a>
         </div>
-      </div>
-      <div className="bg-primary px-[75px] md:px-[100px]" id="services">
+      </section>
+      <section className="bg-primary px-[50px] md:px-[100px]" id="services">
         <div className="max-w-[400px] mx-auto py-[50px] md:max-w-full">
           <div className="text-center mx-auto">
             <h2 className="text-4xl">Services</h2>
@@ -45,7 +47,13 @@ export default function Home() {
           <div className="flex flex-col justify-start items-center gap-[25px] py-[25px] md:flex-row" id="a propos">
             <div className="w-full flex justify-end items-center">
               <div className="max-w-[350px] md:max-w-[80%] relative">
-                <img src="/professional.avif" alt="professional" className="max-w-[350px] rounded-[30px] md:max-w-full" />
+                <Image
+                  src='/professional.avif'
+                  alt='Professional'
+                  width={720}
+                  height={808}
+                  sizes='fill'
+                />
                 <div className="flex justify-center items-center gap-[15px] bg-buttons text-primary py-3 px-4 absolute bottom-[25px] left-0 right-[25px] md:-left-[50px] md:right-[50px] max-w-[400px]">
                   <div>
                     <p className="text-2xl lg:text-3xl"><b>+20</b></p>
@@ -65,8 +73,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-secondary text-primary px-[75px] md:px-[100px]">
+      </section>
+      <section className="bg-secondary text-primary px-[50px] md:px-[100px]">
         <div className="max-w-[400px] mx-auto py-[50px] md:max-w-full flex flex-col justify-center items-start gap-[30px] md:flex-row">
           <div className="flex flex-col justify-center items-start gap-[30px] w-full">
             <h2 className="text-4xl text-center">A propos d'Humaid</h2>
@@ -75,21 +83,33 @@ export default function Home() {
             <p className="hidden md:block">Notre objectif ? Devenir une référence en communication pour les ONG internationales et d'automatiser de petites équipes pour assurer un marketing efficace et durable.</p>
           </div>
           <div className="w-full max-w-[400px] flex justify-center items-center md:max-w-[80%]">
-            <img src="/photo.avif" alt="photo" className="w-full max-w-[350px] rounded-[30px] md:max-w-[80%]" />
+            <Image
+              src='/photo.avif'
+              alt='Photo'
+              width={720}
+              height={685}
+              sizes="fill"
+            />
           </div>
           <p className="block md:hidden">Notre objectif ? Devenir une référence en communication pour les ONG internationales et d'automatiser de petites équipes pour assurer un marketing efficace et durable.</p>
         </div>
-      </div>
-      <div className="bg-primary px-[75px] md:px-[100px]" id="blog">
+      </section>
+      <section className="bg-primary px-[50px] md:px-[100px]" id="blog">
         <div className="max-w-[400px] mx-auto py-[50px] flex flex-col justify-center items-center gap-[30px] md:max-w-full md:flex-row md:items-start">
           <Post image="/photo-post.avif" title="La couverture des crises humanitaires par les médias :" previewContent="Éthique, responsabilité et défis" />
           <Post image="/photo-post-two.avif" title="Le rôle des ONG dans la crise des réfugiés en Europe :" previewContent="Communication, impact et perspectives" />
           <Post image="/photo-post-three.avif" title="L'impact de la crise climatique sur les communautés vulnérables :" previewContent="Comment la communication peut générer la sensibilisation et l'action ?" />
         </div>
-      </div>
-      <div className="text-primary px-[75px] md:px-[100px] min-h-[75vh] flex flex-col md:justify-center md:items-start relative">
-        <div className="absolute w-full h-full top-0 left-0 -z-50">
-          <img src="/secondary-background.avif" alt="secondary background" className="object-cover w-full h-full" />
+      </section>
+      <section className="text-primary px-[50px] md:px-[100px] min-h-[75vh] flex flex-col md:justify-center md:items-start relative">
+        <div className="absolute w-full h-full top-0 left-0 -z-50 bg-secondary">
+          <Image 
+            src='/secondary-background.avif'
+            alt='Secondary Background'
+            width={3840}
+            height={2560}
+            className="object-cover w-full h-full"
+          />
           <div className="bg-opacity w-full h-full absolute top-0 left-0"></div>
         </div>
         <div className="max-w-[400px] mx-auto py-[50px] flex flex-col justify-start items-start gap-[50px] md:max-w-[60%] md:mx-0">
@@ -97,14 +117,14 @@ export default function Home() {
           <p className="text-xl">On peut t'aider à donner vie à tes idées. Discutons de ce que nous pouvons construire ensemble pour créer plus d'impact !</p>
           <a href="#contact" className="py-3 px-9 rounded-full bg-buttons text-primary hover:bg-primary hover:text-secondary">Contacter</a>
         </div>
-      </div>
-      <div className="bg-primary px-[75px] md:px-[100px]" id="contact">
+      </section>
+      <section className="bg-primary px-[50px] md:px-[100px]" id="contact">
         <div className="max-w-[400px] mx-auto py-[50px] md:max-w-full">
           <h2 className="text-3xl text-center">Contact</h2>
           <Form />
         </div>
-      </div>
-      <footer className="bg-secondary text-primary px-[75px] md:px-[100px] text-base">
+      </section>
+      <footer className="bg-secondary text-primary px-[50px] md:px-[100px] text-base">
         <div className="max-w-[400px] mx-auto py-[25px] text-center flex flex-col md:max-w-full md:flex-row md:justify-between md:items-center">
           <div className="flex flex-col justify-center items-center gap-[5px] my-[25px] md:flex-row md:gap-[30px]">
             <p>© Humaid Communication</p>
